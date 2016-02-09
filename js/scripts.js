@@ -1,24 +1,30 @@
-var myfunction = function(argument) {
-  if()
-      return true;
+var leetspeak = function(word) {
 
-}else {
-  return false;
-  }
+
+     var leetWord = word.replace(/e|E/g,"3").replace(/o|O/g,"0")
+     .replace(/I/g,"1").replace(/s/g,"z");
+    //  if (word[0].toLowerCase()==="s"){
+     //
+    //    return this.charAt(0).toUpperCase() + leetWord;
+    //  }
+
+   return leetWord;
+
+
+
+
 };
 
 $(document).ready(function() {
-  $("form#leap-year").submit(function(event) {
-    // var year = parseInt($("input#year").val());
-    // var result = leapYear(year);
-    //
-    // $(".year").text(year);
-    //
-    // if (result === false) {                 // same as writing if (result === false)
-    //   $(".not").text("not");
-    // } else {
-    //   $(".not").text("");
-    // }
+  $("form#leetspeak").submit(function(event) {
+    var word = $("input#words").val();
+
+
+
+    var result = leetspeak(word);
+
+
+    $("#demo").text(result);
 
     $("#result").show();
     event.preventDefault();
